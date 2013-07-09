@@ -9,7 +9,7 @@ app.get('/', function(request, response) {
   
   var a = fs.readFileSync("index.html"); 
 
-  var buffer = new Buffer(256);
+  var buf = new Buffer(256);
 
   len = buf.write(a,0);
 
