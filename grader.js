@@ -13,15 +13,6 @@ var URL_DEFAULT = "http://guarded-fjord-5524.herokuapp.com";
 var CHECKSFILE_DEFAULT = "checks.json";
 
 
-/*rest.get('http://google.com').on('complete', function(result) {
-  if (result instanceof Error) {
-    sys.puts('Error: ' + result.message);
-    this.retry(5000); // try again after 5 sec
-  } else {
-    sys.puts(result);
-  }
-});
-*/
 var assertUrlExists = function(url) {
     rest.get(url).on('complete', function(result) {
       if (result instanceof Error) {
