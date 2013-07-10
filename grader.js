@@ -23,12 +23,14 @@ var CHECKSFILE_DEFAULT = "checks.json";
 });
 */
 var assertUrlExists = function(url) {
-    var instr = infile.toString();
-    if(!fs.existsSync(instr)) {
-        console.log("%s does not exist. Exiting.", instr);
+    rest.get(url).on('complete', function(result) {
+      if (result instanceof Error) {
+        console.log("%s does not exist. Exiting.");
         process.exit(1); 
-    }
-    return instr;
+      } else {
+        return result;
+      }
+    });
 };
 
 var assertFileExists = function(infile) {
