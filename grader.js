@@ -15,15 +15,20 @@ var CHECKSFILE_DEFAULT = "checks.json";
 
 var assertUrlExists = function(url) {
     rest.get(url).on('complete', function(result) {
-    
-        console.log(result);
-
 
       if (result instanceof Error) {
-        console.log("%s does not exist. Exiting.");
-        process.exit(1); 
-      } else {
-        return result;
+        console.log(Error); 
+      }
+      else
+      {
+        var instr = result.toString();
+        
+        if(!fs.existsSync(instr)) {
+            console.log("%s does not exist. Exiting.", instr);
+            process.exit(1); // http://nodejs.org/api/process.html#process_process_exit_code
+        }
+        
+        return instr;
       }
     });
 };
