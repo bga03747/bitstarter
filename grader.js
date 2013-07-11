@@ -20,23 +20,11 @@ var assertUrlExists = function(url) {
         console.log(Error); 
       }
       else
-      {      
-        var buf = new Buffer(result, 'utf8');
-
-        var len = buf.write(result,0);
-
-        var html = buf.toString('utf8', 0, len);
-
-        //write it to a file
-
-        var file = "temp.html";
-
-        fs.writeFileSync(file, html);
-
-        var instr = file.toString();
-
+      {
+        var instr = result.toString();
+        
         if(!fs.existsSync(instr)) {
-            console.log("%s does not exist. Exiting.", file);
+            console.log("%s does not exist. Exiting.", instr);
             process.exit(1); // http://nodejs.org/api/process.html#process_process_exit_code
         }
         
@@ -47,6 +35,9 @@ var assertUrlExists = function(url) {
 
 var assertFileExists = function(infile) {
     var instr = infile.toString();
+
+    console.log(infile);
+
     if(!fs.existsSync(instr)) {
         console.log("%s does not exist. Exiting.", instr);
         process.exit(1); // http://nodejs.org/api/process.html#process_process_exit_code
