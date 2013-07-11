@@ -27,6 +27,8 @@ var assertUrlExists = function(url) {
 
         var instr = buf.toString('utf8', 0, len);
 
+        console.log(instr);
+
         /*if(!fs.existsSync(instr)) {
             console.log("%s does not exist. Exiting.", instr);
             process.exit(1); // http://nodejs.org/api/process.html#process_process_exit_code
