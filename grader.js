@@ -15,6 +15,10 @@ var CHECKSFILE_DEFAULT = "checks.json";
 
 var assertUrlExists = function(url) {
     rest.get(url).on('complete', function(result) {
+    
+        console.log(result);
+
+
       if (result instanceof Error) {
         console.log("%s does not exist. Exiting.");
         process.exit(1); 
@@ -65,9 +69,9 @@ if(require.main == module) {
         .option('-u, --url <url>', 'Site Url', clone(assertUrlExists), URL_DEFAULT)
         .parse(process.argv);
 
-    console.log(program);
+    //console.log(program);
 
-    console.log(program.url);
+    //console.log(program.url);
 
     var checkJson = checkHtmlFile(program.file, program.checks);
     var outJson = JSON.stringify(checkJson, null, 4);
