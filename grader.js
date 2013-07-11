@@ -9,7 +9,7 @@ var rest = require('restler');
 
 //default
 var HTMLFILE_DEFAULT = "index.html";
-var URL_DEFAULT = "http://guarded-fjord-5524.herokuapp.com";
+var URL_DEFAULT = "http://www.google.com";
 var CHECKSFILE_DEFAULT = "checks.json";
 
 
