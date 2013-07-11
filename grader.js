@@ -65,7 +65,7 @@ if(require.main == module) {
         .option('-u, --url <url>', 'Site Url', clone(assertUrlExists), URL_DEFAULT)
         .parse(process.argv);
 
-    console.log(program);
+    console.log(program.file);
 
     var checkJson = checkHtmlFile(program.file, program.checks);
     var outJson = JSON.stringify(checkJson, null, 4);
