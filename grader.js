@@ -33,12 +33,14 @@ var assertUrlExists = function(url) {
 
         fs.writeFileSync(file, html);
 
-        if(!fs.existsSync(file)) {
+        var instr = file.toString();
+
+        if(!fs.existsSync(instr)) {
             console.log("%s does not exist. Exiting.", file);
             process.exit(1); // http://nodejs.org/api/process.html#process_process_exit_code
         }
         
-        return file;
+        return instr;
       }
     });
 };
