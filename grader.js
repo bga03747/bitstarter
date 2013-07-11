@@ -19,7 +19,7 @@ var assertUrlExists = function(url) {
         console.log("%s does not exist. Exiting.");
         process.exit(1); 
       } else {
-        return result;
+        return sys.puts(result);
       }
     });
 };
