@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,11 +14,17 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
           rel="stylesheet" type="text/css">
     <style type="text/css">
-
+    .navbar-inverse .nav .active>a, .navbar-inverse .nav .active>a:hover, .navbar-inverse .nav .active>a:focus {
+      background-color : transparent !important;
+    }
+    .navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus {
+      background-color : transparent !important;
+    }
       /* Large desktop */
       @media (min-width: 980px) { 
         body {
          padding-top: 60px;
+
         }
        .linediv-l {
          border-right: 1px white solid;
@@ -25,20 +32,112 @@
        .linediv-r {
          border-left: 1px white solid;
        }
+        .navbar .nav {
+
+          position: relative !important;
+          top: 5px !important;
+        }
+        p#tagline-text{
+          line-height: 220px !important;
+
+        }
+ 
+      }
+      @media (max-width: 979px) { 
+        body{
+              line-height: 15px !important;
+        }
+        li.active {
+          background-color: #000;
+
+        }
+        .navbar .nav {
+   
+          position: relative;
+          top: 5px;
+        }
+        .nav>li>a>img {
+          display : none;
+        }
+
+        .nav>li>a>p {
+            font-size:16px;
+            font-weight: bold;
+            color: #777777;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            margin-bottom: 2px;
+         }
+        .navbar .brand {
+             margin-top: 10px;
+             margin-left:20px;
+        }
+        .navbar .btn-navbar {
+            position: relative;
+            top: 15px;
+        }
       }
 
+      /* DITO UNG PUTANGINANG ICONS */
+      @media (min-width: 980px) {  
+
+            .navbar .nav {
+              margin-left: 70px !important;
+              position: relative !important;
+              top: 5px !important;
+
+            }
+            .navbar .nav>li {
+              margin-left: 30px;
+            }
+            .nav>li>a>img {
+              position:relative;
+              bottom:4px;
+            }
+             .nav>li>a>p {
+              font-size:12px;
+              line-height: 0 !important;
+              position: relative;
+              left: 5px;
+              top: 5px;
+            }
+            .navbar .brand {
+             margin-top: 15px;
+            }
+            #status_container{
+              width:100% !important;
+            }
+      }
+
+        @media (max-width: 1012px) {
+            #status_container{
+              width:100% !important;
+            }
+            p#tagline-text{
+         
+            }
+        }
       /* Landscape phones and down */
       @media (max-width: 480px) { 
-       .copy {
-         padding: 2.5% 10%;
-       }
-       .linediv-l {
-         border-bottom: 1px white solid;
-       }
-       .linediv-r {
-         border-top: 1px white solid;
-       }
-      }
+         .copy {
+           padding: 2.5% 10%;
+         }
+         .linediv-l {
+           border-bottom: 1px white solid;
+         }
+         .linediv-r {
+           border-top: 1px white solid;
+         }
+        li.active {
+            background-color: #000;
+        }
+        .navbar .nav {
+   
+        }
+    
+      
+     }
 
       /* All form factors */
 
@@ -97,6 +196,20 @@
       .footer a {
         color: #ccccff;
       }
+      div.navbar-inner{
+      
+      }
+      .navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus {
+        box-shadow: none !important;
+
+      }
+      .navbar-inverse .brand {
+        color: #11ECF5;
+      }
+
+      p#tagline-text{
+        line-height:18px !important;
+      }
     </style>
   </head>
   <body>
@@ -104,20 +217,20 @@
     <!-- Mobile-friendly navbar adapted from example. -->
     <!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
     <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
+      <div class="navbar-inner"  style="background-image:url('http://i.imgur.com/mow6XlW.png');opacity: 0.9;">
+        <div class="container" style="min-height: 60px;">
           <button type="button" class="btn btn-navbar"
                   data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Bitstarter</a>
-          <div class="nav-collapse collapse">
+          <a class="brand" href="#">Neptulla<p id="tagline-text" style="font-size: 11px;color: #FFF;position:relative;right: 18px;">We tried to make sense...</p></a>
+          <div class="nav-collapse collapse" style="height: 0px; width: 972px; position: relative; right: 7px;">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li class="active"><a href="#"><img src="http://i.imgur.com/RwFB9Xy.png"><p>Home</p></a></li>
+              <li><a href="#about"><img src="http://i.imgur.com/rS5GLXV.png" style="position:relative;left:2px;"><p>Games</p></a></li>
+              <li><a href="#contact"><img src="http://i.imgur.com/qWCduCw.png" style="position:relative;left:2px;"><p>Movies</p></a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -127,29 +240,30 @@
     <!-- We use row-fluid inside containers to achieve a resizable layout. -->
     <!-- blogs.endjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/ -->
     <!-- http://stackoverflow.com/a/12270322 -->
-    <div class="container">
+    <div class="container" style="margin-top:45px;">
       <!-- Font and paired font of .heading/.subheading and body from Google Fonts -->
       <!-- www.google.com/fonts/specimen/Ubuntu -->
       <!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
       <div class="row-fluid heading">
         <div class="span12">
-          <h1>Product</h1>
+          <h1>What is Neptulla?</h1>
         </div>
       </div> 
       <div class="row-fluid subheading">
         <div class="span12">
           <!-- Special typography from Bootstrap for lead paragraph. -->
           <!-- http://twitter.github.io/bootstrap/base-css.html#typography -->
-          <p class="lead">One sentence description.</p>
+          <p class="lead" style="font-size:19px !important;">Neptulla is an entertainment website where users can share their collections of parodies / mimicry. You can share a video or an image as long as it valid and does not include any pornographic illustrations.</p>
         </div>
       </div>
       <div class="row-fluid pitch">
-        <div class="span5 offset1 video">
+        
+        <!--<div class="span5 offset1 video">
           <img class="img-polaroid" src="http://placehold.it/480x300">
-        </div>
+        </div> -->
 
         <!-- We define a new 'actions' div to contain statistics, order, and share buttons.-->
-        <div class="span5 actions">
+        <div class="span5 actions" id="status_container">
           <div class="span8 offset2">
             <div class="statistics">
               <div class="span4">
@@ -162,12 +276,12 @@
               </div>
               <div class="span4">
                 <div class="linediv-c">
-                  <h3>$6000</h3> <p>of $10,000</p>
+                  <h3>$700</h3> <p>of $10,000</p>
                 </div>
               </div>
               <div class="span4">
                 <div class="linediv-r">
-                <h3>10</h3> <p>days left</p>
+                <h3>37</h3> <p>days left</p>
                 </div>
               </div>
             </div>
@@ -200,43 +314,25 @@
       <!-- http://placehold.it -->
       <div class="row-fluid section1">
         <div class="span5 offset1 asset">
-          <img class="img-polaroid" src="http://placehold.it/480x300">
+          <img class="img-polaroid" src="http://i.imgur.com/jdR8pWs.png">
         </div>
         <div class="span5 copy">
+          <p style="font-weight:bolder;font-size:24px;text-align:left;">Test your mettle!</p><br/>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            porta, dui sagittis hendrerit rutrum, nunc leo tempus nisl, eu
-            mollis justo velit at nunc. Fusce nec egestas sem. Donec
-            fringilla ante lectus, a pellentesque lacus dignissim ac. Sed
-            volutpat lorem ut congue malesuada. In facilisis scelerisque
-            turpis sed lacinia. Donec in orci lectus. Donec auctor semper
-            quam, eget rhoncus purus fringilla id. Phasellus id nibh eu
-            risus ultrices adipiscing.  Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Donec porta, dui sagittis hendrerit
-            rutrum, nunc leo tempus nisl, eu mollis justo velit at
-            nunc. Fusce nec egestas sem. Donec fringilla.
+              Share your parodies to get epic comments and be liked by the community but beware of those users who will dislike your parody. Be one of the best posters and get the highlight of this page!
           </p>
         </div>
       </div>
 
       <div class="row-fluid section2">
         <div class="span5 offset1 copy copy-right">
+          <p style="font-weight:bolder;font-size:24px;text-align:left;">It's Free Forever!</p><br/>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            porta, dui sagittis hendrerit rutrum, nunc leo tempus nisl, eu
-            mollis justo velit at nunc. Fusce nec egestas sem. Donec
-            fringilla ante lectus, a pellentesque lacus dignissim ac. Sed
-            volutpat lorem ut congue malesuada. In facilisis scelerisque
-            turpis sed lacinia. Donec in orci lectus. Donec auctor semper
-            quam, eget rhoncus purus fringilla id. Phasellus id nibh eu
-            risus ultrices adipiscing.  Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Donec porta, dui sagittis hendrerit
-            rutrum, nunc leo tempus nisl, eu mollis justo velit at
-            nunc. Fusce nec egestas sem. Donec fringilla.
+              Don't worry there will be no monthly subscription. Please support us by liking, tweeting or sharing our page. <br/><br/><br/><strong>This website is currently under development.</strong> 
           </p>
         </div>
         <div class="span5 asset">
-          <img class="img-polaroid" src="http://placehold.it/480x300">
+          <img class="img-polaroid" src="http://i.imgur.com/WWwGrDl.png">
         </div>
       </div>
 
